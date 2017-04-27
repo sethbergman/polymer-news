@@ -1,42 +1,47 @@
-# NEWS
-
-## Prerequisites
-
-### Polymer CLI
-
-Install [polymer-cli](https://github.com/Polymer/polymer-cli):
-(Need at least npm v0.3.0)
-
-    npm install -g polymer-cli
-
-### Google App Engine SDK
-
-Install [Google App Engine SDK](https://cloud.google.com/appengine/downloads)
+# Polymer News
+------
 
 ## Setup
+_Make sure you have NPM and Node.js installed._
 
-    git clone https://github.com/polymer/news.git
-    cd news
-    bower install
+### Install Polymer CLI
 
-## Start the development server
+`npm install -g polymer-cli@next
+`
 
-    dev_appserver.py .
+### Install dependencies
 
-## Build
+`bower install
+`
 
-    polymer build
+### Run application with development server
 
-## Test the build
+`polymer serve
+`
 
-This command serves the minified version of the app in an unbundled state, as it would be served by a push-compatible server:
+### Build
 
-    dev_appserver.py build/unbundled
+`polymer build
+`
 
-This command serves the minified version of the app generated using fragment bundling:
+### Deployment
 
-    dev_appserver.py build/bundled
+I have been using [Firebase](https://firebase.google.com/docs/hosting/deploying) to host my Polymer apps. It's a very simple setup.
 
-## Deploy to Google App Engine
+Once I've run the `polymer build` command, I initialize a new project in Firebase with `firebase init` and follow the prompts. I don't change the default values, except for the public directory setting.
 
-    gcloud app deploy build/bundled/app.yaml --project [YOUR_PROJECT_ID]
+Running `polymer build` bundles your files, and makes them accessable from the build/bundled directory. This project is configured to build in the `build/default` directory.
+
+Then run `firebase deploy -p build/default` and viola!
+
+Lastly, I will connect my own domain and firebase will provision an SSL on it for free. It doesn't get much simpler than that my friends!
+
+### Resources
+
+* __[Polymer Project](https://www.polymer-project.org/)__
+
+* __[Webcomponents.org](https://www.webcomponents.org/)__
+
+### Demo
+
+__[Polymer News Demo](https://news.npmstack.com/)__
