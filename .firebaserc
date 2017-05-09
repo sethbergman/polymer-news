@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "news-b378e"
+    "staging": "news-b378e",
+    "default": "aws-stackdriver-rol-1493283632"
   }
 }
