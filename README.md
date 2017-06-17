@@ -1,5 +1,6 @@
 # Polymer News
 ------
+![](https://raw.githubusercontent.com/sethbergman/polymer-news/a56cc75c004ce08c8d9dac917605fce0b5b2909a/NEWS.png)
 
 ## Setup
 _Make sure you have NPM and Node.js installed._
